@@ -150,9 +150,9 @@ const Home = () => {
             <div className="relative">
               <div className="aspect-square rounded-3xl bg-blue-700 overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800&q=80"
-                  alt="Church community"
-                  className="w-full h-full object-cover opacity-90" />
+                  src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/0cedpo9t_IMG_0618.jpg"
+                  alt="Royalhouse Chapel Kent Mission Auditorium"
+                  className="w-full h-full object-cover" />
 
               </div>
               <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-blue-700/10 rounded-3xl -z-10"></div>
