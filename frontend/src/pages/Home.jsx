@@ -22,6 +22,45 @@ const Home = () => {
   const { toast } = useToast();
   const [prayerForm, setPrayerForm] = useState({ name: '', email: '', request: '' });
   const [connectForm, setConnectForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const carouselImages = [
+    {
+      url: 'https://images.unsplash.com/photo-1579975096649-e773152b04cb?crop=entropy&cs=srgb&fm=jpg&q=85',
+      title: 'Worship Together',
+      description: 'Experience powerful worship every Sunday'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1550096141-1b21804f1812?crop=entropy&cs=srgb&fm=jpg&q=85',
+      title: 'Community Fellowship',
+      description: 'Building meaningful relationships in Christ'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1712171755076-a5e104ae458b?crop=entropy&cs=srgb&fm=jpg&q=85',
+      title: 'Celebrating Faith',
+      description: 'Join us for special events and celebrations'
+    },
+    {
+      url: 'https://images.pexels.com/photos/29551036/pexels-photo-29551036.jpeg',
+      title: 'Prayer & Praise',
+      description: 'Seeking God together in prayer and worship'
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+  };
+
+  const previousSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+  };
 
   const handlePrayerSubmit = (e) => {
     e.preventDefault();
@@ -59,9 +98,10 @@ const Home = () => {
               </div>
             </div>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#home" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Home</a>
+              <a href="/" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Home</a>
               <a href="#about" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">About</a>
               <a href="#vision" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Vision</a>
+              <a href="/gallery" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Gallery</a>
               <a href="#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Prayer</a>
               <a href="#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Connect</a>
             </nav>
@@ -114,6 +154,80 @@ const Home = () => {
               </div>
               <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-blue-700/10 rounded-3xl -z-10"></div>
               <div className="absolute -top-6 -right-6 w-48 h-48 bg-blue-700/10 rounded-3xl -z-10"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Carousel */}
+      <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Life at Our Church</h2>
+            <p className="text-lg text-slate-600">Moments of worship, fellowship, and community</p>
+          </div>
+          
+          <div className="relative max-w-6xl mx-auto">
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
+              {carouselImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentSlide ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <img
+                    src={image.url}
+                    alt={image.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+                    <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                      <h3 className="text-3xl md:text-4xl font-bold mb-2">{image.title}</h3>
+                      <p className="text-lg md:text-xl opacity-90">{image.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              
+              <button
+                onClick={previousSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all hover:scale-110"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all hover:scale-110"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="flex justify-center gap-2 mt-6">
+              {carouselImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentSlide
+                      ? 'bg-blue-700 w-8'
+                      : 'bg-blue-200 hover:bg-blue-400'
+                  }`}
+                />
+              ))}
+            </div>
+            
+            <div className="text-center mt-8">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50"
+                onClick={() => window.location.href = '/gallery'}
+              >
+                View Full Gallery
+              </Button>
             </div>
           </div>
         </div>
