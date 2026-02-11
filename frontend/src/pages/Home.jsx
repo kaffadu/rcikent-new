@@ -4,18 +4,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
-import { 
-  Church, 
-  Heart, 
-  BookOpen, 
-  Users, 
-  MapPin, 
-  Mail, 
+import {
+  Church,
+  Heart,
+  BookOpen,
+  Users,
+  MapPin,
+  Mail,
   Phone,
   Facebook,
   Instagram,
-  Send
-} from 'lucide-react';
+  Send } from
+'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
     e.preventDefault();
     toast({
       title: "Prayer Request Submitted",
-      description: "We will be praying for you. God bless you!",
+      description: "We will be praying for you. God bless you!"
     });
     setPrayerForm({ name: '', email: '', request: '' });
   };
@@ -36,7 +36,7 @@ const Home = () => {
     e.preventDefault();
     toast({
       title: "Thank You for Connecting!",
-      description: "We'll be in touch with you soon.",
+      description: "We'll be in touch with you soon."
     });
     setConnectForm({ name: '', email: '', phone: '', message: '' });
   };
@@ -48,11 +48,11 @@ const Home = () => {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/8k2u4zsp_IMG_0615.jpeg" 
-                alt="Royalhouse Chapel Kent Mission" 
-                className="w-14 h-14 rounded-full object-cover"
-              />
+              <img
+                src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/8k2u4zsp_IMG_0615.jpeg"
+                alt="Royalhouse Chapel Kent Mission"
+                className="w-14 h-14 rounded-full object-cover" />
+
               <div>
                 <h1 className="text-xl font-bold text-blue-900">Royalhouse Chapel</h1>
                 <p className="text-xs text-blue-700">Kent Mission</p>
@@ -87,30 +87,30 @@ const Home = () => {
                 We are a Christ-centered, Bible-believing church committed to worship, discipleship, and community impact.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-blue-700 hover:bg-blue-800 text-white shadow-lg hover:shadow-xl transition-all"
-                  onClick={() => document.getElementById('connect').scrollIntoView({ behavior: 'smooth' })}
-                >
+                  onClick={() => document.getElementById('connect').scrollIntoView({ behavior: 'smooth' })}>
+
                   Join Us This Sunday
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 transition-all"
-                  onClick={() => document.getElementById('prayer').scrollIntoView({ behavior: 'smooth' })}
-                >
+                  onClick={() => document.getElementById('prayer').scrollIntoView({ behavior: 'smooth' })}>
+
                   Need Prayer?
                 </Button>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-3xl bg-blue-700 overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800&q=80" 
-                  alt="Church community" 
-                  className="w-full h-full object-cover opacity-90"
-                />
+                <img
+                  src="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800&q=80"
+                  alt="Church community"
+                  className="w-full h-full object-cover opacity-90" />
+
               </div>
               <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-blue-700/10 rounded-3xl -z-10"></div>
               <div className="absolute -top-6 -right-6 w-48 h-48 bg-blue-700/10 rounded-3xl -z-10"></div>
@@ -238,11 +238,11 @@ const Home = () => {
             Come as you are and experience a place where you can belong, grow, and thrive. 
             Your seat is already prepared — we can't wait to meet you!
           </p>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-white text-blue-700 hover:bg-blue-50 font-bold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all"
-            onClick={() => document.getElementById('connect').scrollIntoView({ behavior: 'smooth' })}
-          >
+            onClick={() => document.getElementById('connect').scrollIntoView({ behavior: 'smooth' })}>
+
             Connect With Us Today
           </Button>
         </div>
@@ -276,8 +276,8 @@ const Home = () => {
                     value={prayerForm.name}
                     onChange={(e) => setPrayerForm({ ...prayerForm, name: e.target.value })}
                     required
-                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
-                  />
+                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500" />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="prayer-email">Email Address</Label>
@@ -288,8 +288,8 @@ const Home = () => {
                     value={prayerForm.email}
                     onChange={(e) => setPrayerForm({ ...prayerForm, email: e.target.value })}
                     required
-                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
-                  />
+                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500" />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="prayer-request">Prayer Request</Label>
@@ -300,13 +300,13 @@ const Home = () => {
                     value={prayerForm.request}
                     onChange={(e) => setPrayerForm({ ...prayerForm, request: e.target.value })}
                     required
-                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500 resize-none"
-                  />
+                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500 resize-none" />
+
                 </div>
-                <Button 
-                  type="submit" 
-                  className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-                >
+                <Button
+                  type="submit"
+                  className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+
                   Submit Prayer Request
                 </Button>
               </form>
@@ -344,8 +344,8 @@ const Home = () => {
                       value={connectForm.name}
                       onChange={(e) => setConnectForm({ ...connectForm, name: e.target.value })}
                       required
-                      className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
-                    />
+                      className="border-blue-200 focus:border-blue-500 focus:ring-blue-500" />
+
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="connect-email">Email Address</Label>
@@ -356,8 +356,8 @@ const Home = () => {
                       value={connectForm.email}
                       onChange={(e) => setConnectForm({ ...connectForm, email: e.target.value })}
                       required
-                      className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
-                    />
+                      className="border-blue-200 focus:border-blue-500 focus:ring-blue-500" />
+
                   </div>
                 </div>
                 <div className="space-y-2">
@@ -368,8 +368,8 @@ const Home = () => {
                     placeholder="Your phone number"
                     value={connectForm.phone}
                     onChange={(e) => setConnectForm({ ...connectForm, phone: e.target.value })}
-                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
-                  />
+                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500" />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="connect-message">Message (Optional)</Label>
@@ -379,13 +379,13 @@ const Home = () => {
                     rows={4}
                     value={connectForm.message}
                     onChange={(e) => setConnectForm({ ...connectForm, message: e.target.value })}
-                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500 resize-none"
-                  />
+                    className="border-blue-200 focus:border-blue-500 focus:ring-blue-500 resize-none" />
+
                 </div>
-                <Button 
-                  type="submit" 
-                  className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-                >
+                <Button
+                  type="submit"
+                  className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+
                   <Send className="w-5 h-5 mr-2" />
                   Connect With Us
                 </Button>
@@ -401,11 +401,11 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/8k2u4zsp_IMG_0615.jpeg" 
-                  alt="Royalhouse Chapel Kent Mission" 
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+                <img
+                  src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/8k2u4zsp_IMG_0615.jpeg"
+                  alt="Royalhouse Chapel Kent Mission"
+                  className="w-12 h-12 rounded-full object-cover" />
+
                 <div>
                   <h3 className="text-xl font-bold">Royalhouse Chapel</h3>
                   <p className="text-sm text-blue-400">Kent Mission</p>
@@ -429,8 +429,8 @@ const Home = () => {
                 </div>
                 <div className="flex gap-3">
                   <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                  <a href="mailto:rcikentmission@gmail.com" className="text-slate-300 hover:text-blue-400 transition-colors">
-                    rcikentmission@gmail.com
+                  <a href="mailto:rcikentmission@gmail.com" className="text-slate-300 hover:text-blue-400 transition-colors">info@rcikent.org.uk / rcikentmission@gmail.com
+
                   </a>
                 </div>
               </div>
@@ -439,26 +439,26 @@ const Home = () => {
             <div>
               <h4 className="text-lg font-semibold mb-6 text-blue-400">Connect With Us</h4>
               <div className="flex gap-4">
-                <a 
-                  href="https://www.facebook.com/rcikent" 
-                  target="_blank" 
+                <a
+                  href="https://www.facebook.com/rcikent"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-slate-800 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                >
+                  className="w-12 h-12 bg-slate-800 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all hover:scale-110">
+
                   <Facebook className="w-6 h-6" />
                 </a>
-                <a 
-                  href="https://instagram.com/rcikent" 
-                  target="_blank" 
+                <a
+                  href="https://instagram.com/rcikent"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-slate-800 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                >
+                  className="w-12 h-12 bg-slate-800 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all hover:scale-110">
+
                   <Instagram className="w-6 h-6" />
                 </a>
-                <a 
+                <a
                   href="mailto:rcikentmission@gmail.com"
-                  className="w-12 h-12 bg-slate-800 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                >
+                  className="w-12 h-12 bg-slate-800 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all hover:scale-110">
+
                   <Mail className="w-6 h-6" />
                 </a>
               </div>
@@ -472,8 +472,8 @@ const Home = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Home;
