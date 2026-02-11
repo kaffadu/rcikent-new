@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Church } from 'lucide-react';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -146,6 +146,33 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-blue-50">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 border-b border-blue-100">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            <a href="/" className="flex items-center gap-3">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/8k2u4zsp_IMG_0615.jpeg" 
+                alt="Royalhouse Chapel Kent Mission" 
+                className="w-14 h-14 rounded-full object-cover"
+              />
+              <div>
+                <h1 className="text-xl font-bold text-blue-900">Royalhouse Chapel</h1>
+                <p className="text-xs text-blue-700">Kent Mission</p>
+              </div>
+            </a>
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="/" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Home</a>
+              <a href="/#about" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">About</a>
+              <a href="/#vision" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Vision</a>
+              <a href="/gallery" className="text-blue-700 font-semibold">Gallery</a>
+              <a href="/#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Prayer</a>
+              <a href="/#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Connect</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
       {/* Header Spacing */}
       <div className="pt-24 pb-12 px-4 bg-gradient-to-r from-blue-700 to-blue-800 text-white">
         <div className="container mx-auto text-center">
