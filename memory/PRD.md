@@ -38,7 +38,12 @@ Build a church website for Royalhouse Chapel Kent Mission using colors and brand
 ## What's Been Implemented
 
 ### Phase 1 - Frontend with Official Branding (December 2025)
-**Completed**: 
+**Completed**:
+- ✅ Photo carousel on homepage (auto-play, 4 images, smooth transitions)
+- ✅ Gallery page with category filters (All, Worship, Fellowship, Prayer, Events)
+- ✅ Lightbox modal with previous/next navigation
+- ✅ Gallery navigation link in header
+- ✅ 15 placeholder church images (worship, fellowship, prayer, events) 
 - ✅ Single-page church website with all sections
 - ✅ Fixed navigation header with official church logo (circular)
 - ✅ Hero section with royal blue accents and "Belong & Grow" message
