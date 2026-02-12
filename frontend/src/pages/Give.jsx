@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { Church, CreditCard, Building2, Copy, Check, Heart } from 'lucide-react';
+import { Church, CreditCard, Building2, Copy, Check, Heart, Menu, X } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
 const Give = () => {
   const { toast } = useToast();
   const [copiedField, setCopiedField] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const copyToClipboard = (text, fieldName) => {
     navigator.clipboard.writeText(text);
@@ -52,8 +53,71 @@ const Give = () => {
               <a href="/#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Prayer</a>
               <a href="/#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Connect</a>
             </nav>
+            <button 
+              className="md:hidden text-slate-700 hover:text-blue-700 transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-blue-100 shadow-lg">
+            <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+              <a 
+                href="/" 
+                className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </a>
+              <a 
+                href="/#about" 
+                className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a 
+                href="/#vision" 
+                className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Vision
+              </a>
+              <a 
+                href="/gallery" 
+                className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Gallery
+              </a>
+              <a 
+                href="/give" 
+                className="text-blue-700 font-semibold py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Give
+              </a>
+              <a 
+                href="/#prayer" 
+                className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Prayer
+              </a>
+              <a 
+                href="/#connect" 
+                className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Connect
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}

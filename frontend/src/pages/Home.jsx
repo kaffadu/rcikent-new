@@ -16,7 +16,9 @@ import {
   Instagram,
   Send,
   ChevronLeft,
-  ChevronRight } from
+  ChevronRight,
+  Menu,
+  X } from
 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
@@ -25,6 +27,7 @@ const Home = () => {
   const [prayerForm, setPrayerForm] = useState({ name: '', email: '', request: '' });
   const [connectForm, setConnectForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const carouselImages = [
     {
