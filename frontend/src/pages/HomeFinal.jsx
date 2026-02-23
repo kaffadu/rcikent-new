@@ -135,10 +135,9 @@ const Home = () => {
             </a>
             <nav className="hidden lg:flex items-center gap-6">
               <a href="/" className="text-slate-900 font-semibold hover:text-blue-700 transition-colors">Home</a>
-              <a href="#about" className="text-slate-700 hover:text-blue-700 transition-colors">About</a>
-              <a href="#sermons" className="text-slate-700 hover:text-blue-700 transition-colors">Watch</a>
+              <a href="#about" className="text-slate-700 hover:text-blue-700 transition-colors">Who We Are</a>
               <a href="#events" className="text-slate-700 hover:text-blue-700 transition-colors">Events</a>
-              <a href="/gallery" className="text-slate-700 hover:text-blue-700 transition-colors">Gallery</a>
+              <a href="#new-here" className="text-slate-700 hover:text-blue-700 transition-colors">New Here?</a>
               <a href="/give" className="text-slate-700 hover:text-blue-700 transition-colors">Support Us</a>
               <Button 
                 size="sm"
@@ -162,10 +161,9 @@ const Home = () => {
           <div className="lg:hidden bg-white border-t border-slate-100 shadow-lg">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
               <a href="/" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Home</a>
-              <a href="#about" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>About</a>
-              <a href="#sermons" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Watch</a>
+              <a href="#about" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Who We Are</a>
               <a href="#events" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Events</a>
-              <a href="/gallery" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Gallery</a>
+              <a href="#new-here" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>New Here?</a>
               <a href="/give" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Support Us</a>
               <a href="#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Prayer</a>
               <a href="#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Connect</a>
@@ -176,7 +174,7 @@ const Home = () => {
 
       {/* Hero Section with Video Banner */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-blue-700/70 z-10"></div>
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
         
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
@@ -187,7 +185,7 @@ const Home = () => {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="https://player.vimeo.com/external/434045526.hd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=174" type="video/mp4" />
+            <source src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/jjuutsnw_vidiofy_video_1771886787847.mp4" type="video/mp4" />
             {/* Fallback image if video doesn't load */}
             <img 
               src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/0cedpo9t_IMG_0618.jpg"
@@ -238,13 +236,13 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-20"></div>
       </section>
 
-      {/* Plan Your Visit Section */}
-      <section id="visit" className="py-20 px-4 bg-gradient-to-b from-white to-slate-50">
+      {/* Plan Your Visit / New Here Section */}
+      <section id="new-here" className="py-20 px-4 bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">Plan Your Visit</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">New Here?</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We'd be honored to have you join us! Here's everything you need to know.
+              We'd be honored to have you join us! Here's everything you need to know for your first visit.
             </p>
           </div>
 
