@@ -174,15 +174,27 @@ const Home = () => {
         )}
       </header>
 
-      {/* Hero Section with Video Background */}
+      {/* Hero Section with Video Banner */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/85 to-blue-700/90 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-blue-700/70 z-10"></div>
+        
+        {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/0cedpo9t_IMG_0618.jpg"
-            alt="Church worship"
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
             className="w-full h-full object-cover"
-          />
+          >
+            <source src="https://player.vimeo.com/external/434045526.hd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=174" type="video/mp4" />
+            {/* Fallback image if video doesn't load */}
+            <img 
+              src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/0cedpo9t_IMG_0618.jpg"
+              alt="Church worship"
+              className="w-full h-full object-cover"
+            />
+          </video>
         </div>
         
         <div className="container mx-auto px-4 relative z-20 text-center text-white">
