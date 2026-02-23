@@ -49,7 +49,7 @@ const Give = () => {
               <a href="/#about" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">About</a>
               <a href="/#vision" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Vision</a>
               <a href="/gallery" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Gallery</a>
-              <a href="/give" className="text-blue-700 font-semibold">Give</a>
+              <a href="/give" className="text-blue-700 font-semibold">Support Us</a>
               <a href="/#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Prayer</a>
               <a href="/#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Connect</a>
             </nav>
@@ -126,7 +126,7 @@ const Give = () => {
           <div className="mb-6">
             <Heart className="w-16 h-16 mx-auto mb-4 text-white" />
           </div>
-          <h1 className="text-5xl font-bold mb-6">Give to God's Work</h1>
+          <h1 className="text-5xl font-bold mb-6">Support God's Work</h1>
           <p className="text-xl mb-4 opacity-95 leading-relaxed">
             "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, 
             for God loves a cheerful giver."
