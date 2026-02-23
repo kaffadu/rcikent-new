@@ -217,7 +217,7 @@ const Gallery = () => {
                 className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Give
+                Support Us
               </a>
               <a 
                 href="/#prayer" 
