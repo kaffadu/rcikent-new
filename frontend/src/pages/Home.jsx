@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Input } from '../components/ui/input';
@@ -11,23 +11,24 @@ import {
   Users,
   MapPin,
   Mail,
-  Phone,
   Facebook,
   Instagram,
   Send,
-  ChevronLeft,
-  ChevronRight,
   Menu,
-  X } from
-'lucide-react';
+  X,
+  Play,
+  ArrowRight,
+  Calendar,
+  Clock
+} from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
 const Home = () => {
   const { toast } = useToast();
   const [prayerForm, setPrayerForm] = useState({ name: '', email: '', request: '' });
   const [connectForm, setConnectForm] = useState({ name: '', email: '', phone: '', message: '' });
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const carouselImages = [
     {
