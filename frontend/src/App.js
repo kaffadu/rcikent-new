@@ -1,6 +1,6 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/HomeModern";
+import Home from "./pages/HomeFinal";
 import Gallery from "./pages/Gallery";
 import Give from "./pages/Give";
 import { Toaster } from "./components/ui/sonner";
