@@ -207,7 +207,7 @@ const Home = () => {
             <Button 
               size="lg"
               className="bg-white text-blue-900 hover:bg-blue-50 font-bold px-10 py-7 text-lg shadow-2xl"
-              onClick={() => document.getElementById('visit').scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('new-here').scrollIntoView({ behavior: 'smooth' })}
             >
               Plan Your Visit
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -216,10 +216,9 @@ const Home = () => {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10 font-bold px-10 py-7 text-lg backdrop-blur-sm"
-              onClick={() => document.getElementById('sermons').scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('events').scrollIntoView({ behavior: 'smooth' })}
             >
-              <Play className="mr-2 w-6 h-6" />
-              Watch Sermons
+              View Events
             </Button>
           </div>
           
@@ -294,40 +293,6 @@ const Home = () => {
                 </a>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Latest Sermon Section */}
-      <section id="sermons" className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">Watch Our Latest Message</h2>
-            <p className="text-xl text-slate-600">Catch up on what God is saying to our church family</p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="aspect-video bg-slate-900 rounded-2xl overflow-hidden shadow-2xl mb-6">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/KFpzbTPWXkY"
-                title="Latest Sermon"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">God's Transforming Love</h3>
-              <p className="text-slate-600 mb-6">A powerful message about experiencing God's unconditional love</p>
-              <a href="/gallery">
-                <Button size="lg" variant="outline" className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50">
-                  <Video className="w-5 h-5 mr-2" />
-                  Watch More Messages
-                </Button>
-              </a>
-            </div>
           </div>
         </div>
       </section>
