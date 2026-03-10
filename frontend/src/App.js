@@ -1,7 +1,6 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/HomeFinal";
-import Gallery from "./pages/Gallery";
+import Home from "./pages/HomeUpdated";
 import Give from "./pages/Give";
 import { Toaster } from "./components/ui/sonner";
 
@@ -11,7 +10,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/give" element={<Give />} />
         </Routes>
       </BrowserRouter>
