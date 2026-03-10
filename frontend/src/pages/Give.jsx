@@ -48,7 +48,6 @@ const Give = () => {
               <a href="/" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Home</a>
               <a href="/#about" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">About</a>
               <a href="/#vision" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Vision</a>
-              <a href="/gallery" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Gallery</a>
               <a href="/give" className="text-blue-700 font-semibold">Support Us</a>
               <a href="/#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Prayer</a>
               <a href="/#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Connect</a>
@@ -86,13 +85,6 @@ const Give = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Vision
-              </a>
-              <a 
-                href="/gallery" 
-                className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Gallery
               </a>
               <a 
                 href="/give" 
