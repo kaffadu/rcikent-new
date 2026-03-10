@@ -306,6 +306,9 @@ const Home = () => {
               belong, we want you to feel at home from the moment you arrive.
             </p>
           </div>
+
+          {/* When We Meet */}
+          <div className="mb-16">
             <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">When We Meet</h3>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <Card className="border-2 border-blue-200 shadow-xl">

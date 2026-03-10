@@ -1,102 +1,62 @@
 # Royalhouse Chapel Kent Mission - Website PRD
 
 ## Problem Statement
-Build a church website for Royalhouse Chapel Kent Mission using colors and branding from their official logo.
+Build a church website for Royalhouse Chapel Kent Mission using colors and branding from their official logo. The website should follow the content and structure specified in the user's provided PDF document.
 
 ## User Information & Context
 - **Church Name**: Royalhouse Chapel Kent Mission
-- **Tagline**: "We are a Christ-centered, Bible-believing church committed to worship, discipleship, and community impact."
-- **Mission**: Touching our generation with the power of God
-- **Brand Colors**: Royal Blue (#1e40af / blue-700), White, Light Blue accents - Professional, regal, trustworthy
+- **Tagline**: "Touching Our Generation with the Power of God"
+- **Brand Colors**: Royal Blue (#1e40af / blue-700), White, Light Blue accents
 - **Logo**: Crown with dove on royal blue background
-- **Location**: Northfleet Technology College, Colyer Rd, Northfleet, Gravesend DA11 8BG
+- **Location**: Northfleet Technology College, Colyer Road, Northfleet, Gravesend DA11 8BG
 - **Contact**: rcikentmission@gmail.com
 - **Social Media**: Instagram (@rcikent), Facebook (rcikent), TikTok (@rcikent)
 
-## Core Requirements (Static)
+## Core Requirements
 
 ### Design Requirements
 - Modern, conversion-optimized church website
 - Royal blue and white color scheme (matching official logo)
-- Agency-quality design ($20,000+ standard)
+- Video hero banner with blue overlay
 - Responsive design for all devices
+- Mobile hamburger menu
 - Smooth animations and micro-interactions
-- Inter font family for professional typography
-- Official church logo integration in header and footer
 
 ### Functional Requirements
-1. **Navigation**: Fixed header with official logo and smooth scroll navigation
-2. **Hero Section**: Welcome message with CTA buttons
-3. **About Section**: Three key values (Christ-Centered, Bible-Believing, Community Impact)
-4. **Mission & Vision Section**: Church mission and three-point vision
-5. **Journey CTA Section**: Compelling call-to-action for new visitors
-6. **Prayer Request Form**: Submit prayer requests with name, email, and message
-7. **Connect Form**: Contact form for new visitors (name, email, phone, message)
-8. **Footer**: Church information, location, contact details, social media links with logo
-9. **Toast Notifications**: User feedback for form submissions
+1. **Navigation**: Fixed header with logo, links to sections, "Connect With Us" CTA
+2. **Hero Section**: Video background with church name, tagline, and CTA buttons
+3. **Who We Are**: Church description, Mission & Vision cards
+4. **New Here?**: Welcome content for first-time visitors
+5. **Plan Your Visit**: Service times, location with directions, what to expect
+6. **Support Us**: Give, Volunteer, Pray cards with bank details link
+7. **Connect Form**: Contact form for visitors
+8. **Prayer Request Form**: Submit prayer requests
+9. **Footer**: Social links, quick links, location
 
 ## What's Been Implemented
 
-### Phase 1 - Frontend with Official Branding (December 2025)
+### Latest Update - December 2025
 **Completed**:
-- ✅ Single-page church website with all sections
-- ✅ Photo carousel on homepage (auto-play, 4 images, smooth transitions)
-- ✅ Gallery page with category filters (All, Worship, Fellowship, Prayer, Events)
-- ✅ Lightbox modal with previous/next navigation
-- ✅ **Give/Donate page with UK bank account and PayPal details**
-- ✅ **One-click copy functionality for bank details**
-- ✅ Navigation links updated across all pages
-- ✅ Fixed navigation header with official church logo (circular)
-- ✅ Hero section with church auditorium image
-- ✅ About section with three feature cards (blue theme)
-- ✅ Mission & Vision cards with royal blue headers
-- ✅ "Start Your Journey" CTA section with full-width royal blue background
-- ✅ Prayer Request form (frontend only, using browser state)
-- ✅ Connect With Us form (frontend only, using browser state)
-- ✅ Professional footer with official logo and social media links
-- ✅ Toast notifications using Sonner
-- ✅ Custom animations (hover effects, transitions)
-- ✅ Responsive design
-- ✅ Color scheme: Blue-700 for primary, Slate-900 for footer, Blue-50 for backgrounds
-
-**Give Page Features**:
-- Bank transfer details with copy buttons (Account Name, Sort Code, Account Number)
-- PayPal integration with email and instructions
-- Biblical verse on giving (2 Corinthians 9:7)
-- Impact section showing how gifts are used (Ministry & Worship, Community Outreach, Church Operations)
-- Thank you message
-- Professional layout matching church branding 
-- ✅ Single-page church website with all sections
-- ✅ Fixed navigation header with official church logo (circular)
-- ✅ Hero section with royal blue accents and "Belong & Grow" message
-- ✅ About section with three feature cards (blue theme)
-- ✅ Mission & Vision cards with royal blue headers
-- ✅ "Start Your Journey" CTA section with full-width royal blue background
-- ✅ Prayer Request form (frontend only, using browser state)
-- ✅ Connect With Us form (frontend only, using browser state)
-- ✅ Professional footer with official logo and social media links
-- ✅ Toast notifications using Sonner
-- ✅ Custom animations (hover effects, transitions)
-- ✅ Responsive design
-- ✅ Color scheme: Blue-700 for primary, Slate-900 for footer, Blue-50 for backgrounds
+- Video hero banner with royal blue overlay
+- Single-page scrolling website with all sections
+- Navigation: Home, Who We Are, New Here?, Plan Your Visit, Support Us, Connect With Us
+- Mobile responsive hamburger menu
+- "Who We Are" section with Mission & Vision cards
+- "New Here?" section with welcoming content
+- "Plan Your Visit" with service times, location, and "What to Expect" cards
+- "Support Us" section with Give, Volunteer, Pray options
+- "Connect With Us" form (frontend-only)
+- "Prayer Request" form (frontend-only)
+- Footer with social media links
+- Give page with bank details (/give route)
+- Cleaned up orphaned page components (removed Gallery.jsx, Home.jsx, HomeFinal.jsx, HomeModern.jsx)
 
 **Technologies**:
 - React 19 with React Router
 - Tailwind CSS for styling
-- Shadcn/UI components (Button, Card, Input, Textarea, Label, Toast)
+- Shadcn/UI components
 - Lucide React icons
 - Sonner for toast notifications
-- Inter font family
-
-**Design Highlights**:
-- Official church logo integrated in header and footer
-- Royal blue (#1e40af) primary color matching logo
-- Clean white backgrounds with blue accents
-- Professional, trustworthy appearance
-- Proper spacing and whitespace
-- Hover effects on all interactive elements
-- Smooth scroll behavior
-- No AI emojis - used Lucide icons only
 
 ## Prioritized Backlog
 
@@ -105,61 +65,36 @@ Build a church website for Royalhouse Chapel Kent Mission using colors and brand
    - MongoDB models for Prayer Requests and Connect submissions
    - POST /api/prayer-requests endpoint
    - POST /api/connect endpoint
-   - GET endpoints for admin view (optional)
    - Integration with frontend forms
 
-2. **Email Notifications** (Optional)
-   - Send email notifications when prayer requests are submitted
-   - Send email notifications when connect forms are submitted
-   - Email integration (SendGrid, AWS SES, or similar)
-
 ### P1 Features (Medium Priority)
-1. **Service Times & Events Section**
-   - Add Sunday service times
-   - Weekly schedule display
-   - Upcoming events calendar
-
-2. **Sermons/Messages Section**
-   - Audio/video player for sermon archives
-   - Sermon categorization and search
-   - Latest sermon featured on homepage
-
-3. **Gallery Section**
-   - Photo gallery from church events
-   - Image upload and management
-
-### P2 Features (Nice to Have)
-1. **Testimonials Section**
-   - Member testimonies
-   - Carousel/slider display
-
-2. **Ministries Page**
-   - Different ministry groups
-   - Ministry leaders and contact info
-
-3. **Blog/News Section**
-   - Church announcements
-   - Blog posts and articles
-
-4. **Online Giving/Donations**
-   - Stripe integration for donations
-   - Recurring giving options
-
-5. **Admin Dashboard**
+1. **Email Notifications**
+   - Send notifications when forms are submitted
+2. **Admin Dashboard**
    - View submitted prayer requests
    - View connect form submissions
-   - Manage content
+
+### P2 Features (Nice to Have)
+1. **Content Management**
+   - Admin ability to update service times
+   - Event management
+2. **Online Giving Integration**
+   - Stripe integration for donations
 
 ## Next Tasks
-1. User confirmation to proceed with backend development
-2. Create backend API endpoints for forms
-3. Integrate frontend with backend
-4. Test end-to-end functionality
-5. Consider email notification integration
+1. Implement backend for "Connect With Us" form
+2. Implement backend for "Prayer Request" form
+3. Test end-to-end form functionality
+
+## File Structure
+```
+/app/frontend/src/pages/
+├── HomeUpdated.jsx (Main homepage - active)
+└── Give.jsx (Bank details page)
+```
 
 ## Notes
-- All forms currently use frontend state only (toast notifications)
-- No backend integration yet
-- Design uses official church logo and royal blue branding
-- Logo sourced from customer assets
-
+- All forms currently frontend-only (toast notifications only)
+- Gallery feature was removed per user request
+- "Watch" section was removed per user request
+- Video hero banner using user-provided video
