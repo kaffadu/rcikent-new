@@ -4,9 +4,7 @@ from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+import requests
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
@@ -57,30 +55,32 @@ class ConnectFormCreate(BaseModel):
 # --- Email helper ---
 
 def send_email(subject: str, body: str):
-    smtp_user = os.environ.get('SMTP_USER')
-    smtp_password = os.environ.get('SMTP_PASSWORD')
-    smtp_host = os.environ.get('SMTP_HOST', 'mail.privateemail.com')
-    smtp_port = int(os.environ.get('SMTP_PORT', '465'))
-    notify_email = os.environ.get('NOTIFY_EMAIL', smtp_user)
+    api_key = os.environ.get('RESEND_API_KEY')
+    notify_email = os.environ.get('NOTIFY_EMAIL', 'info@premierhubconsult.com')
 
-    if not smtp_user or not smtp_password:
-        logger.warning("Email not configured (SMTP_USER/SMTP_PASSWORD missing), skipping notification")
+    if not api_key:
+        logger.warning("RESEND_API_KEY not set, skipping email notification")
         return
 
     try:
-        msg = MIMEMultipart()
-        msg['From'] = smtp_user
-        msg['To'] = notify_email
-        msg['Subject'] = subject
-        msg.attach(MIMEText(body, 'plain'))
-
-        with smtplib.SMTP_SSL(smtp_host, smtp_port) as server:
-            server.login(smtp_user, smtp_password)
-            server.sendmail(smtp_user, notify_email, msg.as_string())
-
-        logger.info(f"Email sent: {subject}")
+        response = requests.post(
+            'https://api.resend.com/emails',
+            headers={
+                'Authorization': f'Bearer {api_key}',
+                'Content-Type': 'application/json',
+            },
+            json={
+                'from': 'RCI Kent Website <onboarding@resend.dev>',
+                'to': [notify_email],
+                'subject': subject,
+                'text': body,
+            },
+            timeout=10
+        )
+        response.raise_for_status()
+        logger.info(f"Email sent via Resend: {subject}")
     except Exception as e:
-        logger.error(f"Failed to send email: {e}")
+        logger.error(f"Failed to send email via Resend: {e}")
 
 
 # --- Routes ---
@@ -91,31 +91,31 @@ async def root():
 
 @api_router.get("/test-email")
 async def test_email():
-    smtp_user = os.environ.get('SMTP_USER')
-    smtp_password = os.environ.get('SMTP_PASSWORD')
-    smtp_host = os.environ.get('SMTP_HOST', 'mail.privateemail.com')
-    smtp_port = int(os.environ.get('SMTP_PORT', '465'))
-    notify_email = os.environ.get('NOTIFY_EMAIL', smtp_user)
+    api_key = os.environ.get('RESEND_API_KEY')
+    notify_email = os.environ.get('NOTIFY_EMAIL', 'info@premierhubconsult.com')
 
-    if not smtp_user or not smtp_password:
-        return {"status": "error", "message": "SMTP_USER or SMTP_PASSWORD not set in environment"}
+    if not api_key:
+        return {"status": "error", "message": "RESEND_API_KEY not set in environment"}
 
     try:
-        msg = MIMEMultipart()
-        msg['From'] = smtp_user
-        msg['To'] = notify_email
-        msg['Subject'] = "RCI Kent - Email Test"
-        msg.attach(MIMEText("This is a test email from your RCI Kent website backend.", 'plain'))
-
-        with smtplib.SMTP_SSL(smtp_host, smtp_port) as server:
-            server.login(smtp_user, smtp_password)
-            server.sendmail(smtp_user, notify_email, msg.as_string())
-
+        response = requests.post(
+            'https://api.resend.com/emails',
+            headers={
+                'Authorization': f'Bearer {api_key}',
+                'Content-Type': 'application/json',
+            },
+            json={
+                'from': 'RCI Kent Website <onboarding@resend.dev>',
+                'to': [notify_email],
+                'subject': 'RCI Kent - Email Test',
+                'text': 'This is a test email from your RCI Kent website backend.',
+            },
+            timeout=10
+        )
+        response.raise_for_status()
         return {"status": "success", "message": f"Test email sent to {notify_email}"}
-    except smtplib.SMTPAuthenticationError as e:
-        return {"status": "error", "type": "auth", "message": f"Authentication failed: {str(e)}"}
-    except smtplib.SMTPConnectError as e:
-        return {"status": "error", "type": "connect", "message": f"Could not connect to {smtp_host}:{smtp_port}: {str(e)}"}
+    except requests.HTTPError as e:
+        return {"status": "error", "type": "http", "message": str(e), "detail": response.text}
     except Exception as e:
         return {"status": "error", "type": type(e).__name__, "message": str(e)}
 

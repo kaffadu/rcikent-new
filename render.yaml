@@ -14,3 +14,7 @@ services:
         value: https://kaffadu.github.io,http://localhost:3000
       - key: PYTHON_VERSION
         value: "3.11"
+      - key: RESEND_API_KEY
+        sync: false
+      - key: NOTIFY_EMAIL
+        sync: false
