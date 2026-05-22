@@ -210,88 +210,96 @@ const Home = () => {
           </div>
         </div>
         
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-20"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-950 to-transparent z-20"></div>
       </section>
 
       {/* Who We Are Section */}
-      <section id="who-we-are" className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
+      <section id="who-we-are" className="py-20 px-4 bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950 relative overflow-hidden">
+        {/* Dot pattern overlay */}
+        <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '32px 32px'}}></div>
+        {/* Glow accents */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">Who We Are</h2>
+            <p className="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">Our Story</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Who We Are</h2>
+            <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full"></div>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6 text-lg text-slate-700 leading-relaxed mb-16">
+          <div className="max-w-4xl mx-auto space-y-6 text-lg text-blue-100 leading-relaxed mb-16">
             <p>
-              Royalhouse Chapel Kent is a Christian church passionate about helping people experience 
-              the presence and power of God. We are a welcoming and diverse church family committed 
-              to prayer, worship, biblical teaching, and building genuine relationships within our 
+              Royalhouse Chapel Kent is a Christian church passionate about helping people experience
+              the presence and power of God. We are a welcoming and diverse church family committed
+              to prayer, worship, biblical teaching, and building genuine relationships within our
               community.
             </p>
             <p>
-              Our church brings together people from across Gravesend, Northfleet, Dartford, Ebbsfleet 
-              Valley, and Rochester, creating a vibrant church community where people can grow in faith 
+              Our church brings together people from across Gravesend, Northfleet, Dartford, Ebbsfleet
+              Valley, and Rochester, creating a vibrant church community where people can grow in faith
               and support one another in everyday life.
             </p>
             <p>
-              We gather weekly at Northfleet Technology College, where we come together to worship 
+              We gather weekly at Northfleet Technology College, where we come together to worship
               God, pray, hear practical teaching from the Bible, and experience a loving church family.
             </p>
             <p>
-              As a growing church, we are passionate about seeing lives transformed by the love of Jesus. 
-              People from many different backgrounds come together as one community, united by faith 
+              As a growing church, we are passionate about seeing lives transformed by the love of Jesus.
+              People from many different backgrounds come together as one community, united by faith
               and a shared desire to grow spiritually and make a positive impact in our local area.
             </p>
             <p>
-              We believe church is more than just a Sunday gathering. It is a place where people can find 
-              hope, encouragement, and support through every stage of life. Our aim is to create an 
+              We believe church is more than just a Sunday gathering. It is a place where people can find
+              hope, encouragement, and support through every stage of life. Our aim is to create an
               atmosphere where everyone feels welcomed, valued, and able to encounter God personally.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <Card className="border-2 border-blue-200 shadow-xl">
-              <CardHeader className="bg-blue-700 text-white">
-                <CardTitle className="text-3xl">Our Mission</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-8">
-                <p className="text-xl font-semibold text-slate-900 leading-relaxed">
-                  Touching our generation with the power of God, impacting lives through worship, 
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="bg-blue-500/30 border-b border-white/20 px-8 py-6">
+                <h3 className="text-3xl font-bold text-white">Our Mission</h3>
+              </div>
+              <div className="px-8 py-8">
+                <p className="text-xl font-semibold text-blue-100 leading-relaxed">
+                  Touching our generation with the power of God, impacting lives through worship,
                   teaching, prayer, and community outreach.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border-2 border-blue-200 shadow-xl">
-              <CardHeader className="bg-blue-700 text-white">
-                <CardTitle className="text-3xl">Our Vision</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-8 space-y-4">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="bg-blue-500/30 border-b border-white/20 px-8 py-6">
+                <h3 className="text-3xl font-bold text-white">Our Vision</h3>
+              </div>
+              <div className="px-8 py-8 space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1 font-bold text-blue-700">
+                  <div className="w-8 h-8 bg-blue-400/30 border border-blue-300/50 rounded-full flex items-center justify-center flex-shrink-0 mt-1 font-bold text-blue-200">
                     1
                   </div>
-                  <p className="text-slate-700">
-                    Bring people into God's presence through <strong>prayer, praise, and worship</strong>
+                  <p className="text-blue-100">
+                    Bring people into God's presence through <strong className="text-white">prayer, praise, and worship</strong>
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1 font-bold text-blue-700">
+                  <div className="w-8 h-8 bg-blue-400/30 border border-blue-300/50 rounded-full flex items-center justify-center flex-shrink-0 mt-1 font-bold text-blue-200">
                     2
                   </div>
-                  <p className="text-slate-700">
-                    Preach messages of hope addressing both <strong>spiritual and practical needs</strong>
+                  <p className="text-blue-100">
+                    Preach messages of hope addressing both <strong className="text-white">spiritual and practical needs</strong>
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1 font-bold text-blue-700">
+                  <div className="w-8 h-8 bg-blue-400/30 border border-blue-300/50 rounded-full flex items-center justify-center flex-shrink-0 mt-1 font-bold text-blue-200">
                     3
                   </div>
-                  <p className="text-slate-700">
-                    Provide a place of <strong>love, care, fellowship, and support</strong> for all
+                  <p className="text-blue-100">
+                    Provide a place of <strong className="text-white">love, care, fellowship, and support</strong> for all
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
