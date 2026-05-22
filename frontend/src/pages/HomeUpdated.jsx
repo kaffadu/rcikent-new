@@ -216,8 +216,8 @@ const Home = () => {
       {/* Who We Are Section */}
       <section id="who-we-are" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-blue-950/92"></div>
+          <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-blue-950/90"></div>
         </div>
         {/* Dot pattern overlay */}
         <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '32px 32px'}}></div>
@@ -471,7 +471,7 @@ const Home = () => {
       <section id="support" className="py-20 px-4 relative overflow-hidden text-white">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-blue-900/92"></div>
+          <div className="absolute inset-0 bg-blue-950/95"></div>
         </div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
@@ -490,9 +490,9 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white hover:bg-white/20 transition-all">
+            <Card className="bg-blue-900/80 backdrop-blur-sm border border-blue-700/50 text-white hover:bg-blue-800/80 transition-all">
               <CardHeader>
-                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-blue-600/60 rounded-xl flex items-center justify-center mb-4">
                   <DollarSign className="w-8 h-8" />
                 </div>
                 <CardTitle className="text-2xl">Give</CardTitle>
@@ -515,9 +515,9 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white hover:bg-white/20 transition-all">
+            <Card className="bg-blue-900/80 backdrop-blur-sm border border-blue-700/50 text-white hover:bg-blue-800/80 transition-all">
               <CardHeader>
-                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-blue-600/60 rounded-xl flex items-center justify-center mb-4">
                   <HandHeart className="w-8 h-8" />
                 </div>
                 <CardTitle className="text-2xl">Serve</CardTitle>
@@ -538,9 +538,9 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white hover:bg-white/20 transition-all">
+            <Card className="bg-blue-900/80 backdrop-blur-sm border border-blue-700/50 text-white hover:bg-blue-800/80 transition-all">
               <CardHeader>
-                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-blue-600/60 rounded-xl flex items-center justify-center mb-4">
                   <Heart className="w-8 h-8" />
                 </div>
                 <CardTitle className="text-2xl">Pray</CardTitle>
