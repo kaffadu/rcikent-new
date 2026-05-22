@@ -81,7 +81,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
-      <header className="fixed top-0 left-0 right-0 bg-white/98 backdrop-blur-lg shadow-sm z-50 border-b border-slate-100">
+      <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50 border-b border-slate-200">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <a href="#/" className="flex items-center gap-3">
