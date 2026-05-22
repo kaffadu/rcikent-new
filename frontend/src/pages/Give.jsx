@@ -33,7 +33,7 @@ const Give = () => {
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 border-b border-blue-100">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <a href="/" className="flex items-center gap-3">
+            <a href="#/" className="flex items-center gap-3">
               <img 
                 src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/8k2u4zsp_IMG_0615.jpeg" 
                 alt="Royalhouse Chapel Kent Mission" 
@@ -45,12 +45,12 @@ const Give = () => {
               </div>
             </a>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="/" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Home</a>
-              <a href="/#about" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">About</a>
-              <a href="/#vision" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Vision</a>
-              <a href="/give" className="text-blue-700 font-semibold">Support Us</a>
-              <a href="/#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Prayer</a>
-              <a href="/#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Connect</a>
+              <a href="#/" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Home</a>
+              <a href="#/#about" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">About</a>
+              <a href="#/#vision" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Vision</a>
+              <a href="#/give" className="text-blue-700 font-semibold">Support Us</a>
+              <a href="#/#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Prayer</a>
+              <a href="#/#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium">Connect</a>
             </nav>
             <button 
               className="md:hidden text-slate-700 hover:text-blue-700 transition-colors"
@@ -66,42 +66,42 @@ const Give = () => {
           <div className="md:hidden bg-white border-t border-blue-100 shadow-lg">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
               <a 
-                href="/" 
+                href="#/" 
                 className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </a>
               <a 
-                href="/#about" 
+                href="#/#about" 
                 className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </a>
               <a 
-                href="/#vision" 
+                href="#/#vision" 
                 className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Vision
               </a>
               <a 
-                href="/give" 
+                href="#/give" 
                 className="text-blue-700 font-semibold py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Give
               </a>
               <a 
-                href="/#prayer" 
+                href="#/#prayer" 
                 className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Prayer
               </a>
               <a 
-                href="/#connect" 
+                href="#/#connect" 
                 className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
