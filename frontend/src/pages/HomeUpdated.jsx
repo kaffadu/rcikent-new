@@ -158,7 +158,7 @@ const Home = () => {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="%PUBLIC_URL%/videos/worship.mp4" type="video/mp4" />
+            <source src={`${process.env.PUBLIC_URL}/videos/worship.mp4`} type="video/mp4" />
             <img 
               src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/0cedpo9t_IMG_0618.jpg"
               alt="Church worship"
