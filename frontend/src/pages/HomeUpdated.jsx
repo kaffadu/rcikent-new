@@ -214,12 +214,13 @@ const Home = () => {
       </section>
 
       {/* Who We Are Section */}
-      <section id="who-we-are" className="py-20 px-4 bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950 relative overflow-hidden">
+      <section id="who-we-are" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/0cedpo9t_IMG_0618.jpg" alt="" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-blue-950/88"></div>
+        </div>
         {/* Dot pattern overlay */}
         <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '32px 32px'}}></div>
-        {/* Glow accents */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
@@ -305,45 +306,51 @@ const Home = () => {
       </section>
 
       {/* New Here Section */}
-      <section id="new-here" className="py-20 px-4 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container mx-auto max-w-6xl">
+      <section id="new-here" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-slate-900/80"></div>
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">New Here?</h2>
+            <p className="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">Welcome</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">New Here?</h2>
+            <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full"></div>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6 text-lg text-slate-700 leading-relaxed mb-12">
+          <div className="max-w-4xl mx-auto space-y-6 text-lg text-blue-100 leading-relaxed mb-12">
             <p>
-              Visiting a church for the first time can feel like a big step, but at Royalhouse Chapel Kent 
+              Visiting a church for the first time can feel like a big step, but at Royalhouse Chapel Kent
               we want you to feel relaxed, welcomed, and at home from the moment you arrive.
             </p>
             <p>
-              We are a friendly Christian church serving the communities of Gravesend, Northfleet, 
+              We are a friendly Christian church serving the communities of Gravesend, Northfleet,
               Dartford, Ebbsfleet Valley, and surrounding areas.
             </p>
             <p>
-              We gather every week at Northfleet Technology College, where we come together to worship 
+              We gather every week at Northfleet Technology College, where we come together to worship
               God, grow in faith, and build meaningful relationships.
             </p>
             <p>
-              Our heart is to create a place where people can experience God's presence through prayer, 
-              praise, and worship, hear encouraging messages from the Bible, and connect with a 
+              Our heart is to create a place where people can experience God's presence through prayer,
+              praise, and worship, hear encouraging messages from the Bible, and connect with a
               supportive community.
             </p>
             <p>
-              We believe that every person has a role to play in what God is doing through the church. 
-              Whether you are exploring faith, looking for a church home, or wanting to grow deeper in 
+              We believe that every person has a role to play in what God is doing through the church.
+              Whether you are exploring faith, looking for a church home, or wanting to grow deeper in
               your relationship with God, there is a place for you at Royalhouse Chapel Kent.
             </p>
-            <p className="font-semibold text-blue-700">
-              Join us at Northfleet Technology College and be part of a community committed to faith, 
+            <p className="font-semibold text-blue-300">
+              Join us at Northfleet Technology College and be part of a community committed to faith,
               hope, and transformation.
             </p>
           </div>
 
           <div className="text-center">
-            <Button 
+            <Button
               size="lg"
-              className="bg-blue-700 hover:bg-blue-800 text-white px-10 py-6 text-lg"
+              className="bg-white text-blue-900 hover:bg-blue-50 font-bold px-10 py-6 text-lg shadow-2xl"
               onClick={() => document.getElementById('connect').scrollIntoView({ behavior: 'smooth' })}
             >
               Connect With Us
@@ -353,165 +360,107 @@ const Home = () => {
       </section>
 
       {/* Plan Your Visit Section */}
-      <section id="plan-your-visit" className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
+      <section id="plan-your-visit" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-slate-900/82"></div>
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">Plan Your Visit</h2>
+            <p className="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">Visit Us</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Plan Your Visit</h2>
+            <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full"></div>
           </div>
 
           <div className="max-w-4xl mx-auto mb-16">
-            <p className="text-lg text-slate-700 leading-relaxed text-center mb-8">
-              We would love to welcome you to Royalhouse Chapel Kent, a church where people come 
+            <p className="text-lg text-blue-100 leading-relaxed text-center mb-6">
+              We would love to welcome you to Royalhouse Chapel Kent, a church where people come
               together to encounter God, experience hope, and build meaningful relationships.
             </p>
-            <p className="text-lg text-slate-700 leading-relaxed text-center">
-              Whether you're exploring faith for the first time, returning to church, or looking for a place to 
+            <p className="text-lg text-blue-100 leading-relaxed text-center">
+              Whether you're exploring faith for the first time, returning to church, or looking for a place to
               belong, we want you to feel at home from the moment you arrive.
             </p>
           </div>
 
           {/* When We Meet */}
           <div id="when-we-meet" className="mb-16">
-            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">When We Meet</h3>
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">When We Meet</h3>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <Card className="border-2 border-blue-200 shadow-xl">
-                <CardHeader className="bg-gradient-to-r from-blue-50 to-slate-50">
-                  <div className="flex items-center gap-3">
-                    <div className="w-14 h-14 bg-blue-700 rounded-xl flex items-center justify-center">
-                      <Church className="w-7 h-7 text-white" />
-                    </div>
-                    <CardTitle className="text-2xl">Sunday Service</CardTitle>
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="bg-blue-500/30 border-b border-white/20 px-6 py-5 flex items-center gap-3">
+                  <div className="w-12 h-12 bg-blue-500/40 rounded-xl flex items-center justify-center">
+                    <Church className="w-6 h-6 text-white" />
                   </div>
-                </CardHeader>
-                <CardContent className="pt-6">
-                  <p className="text-3xl font-bold text-blue-700 mb-2">10:00 AM</p>
-                  <p className="text-slate-600">Join us for worship, teaching, and fellowship</p>
-                </CardContent>
-              </Card>
+                  <h4 className="text-xl font-bold text-white">Sunday Service</h4>
+                </div>
+                <div className="px-6 py-6">
+                  <p className="text-4xl font-bold text-blue-300 mb-2">10:00 AM</p>
+                  <p className="text-blue-100">Join us for worship, teaching, and fellowship</p>
+                </div>
+              </div>
 
-              <Card className="border-2 border-blue-200 shadow-xl">
-                <CardHeader className="bg-gradient-to-r from-blue-50 to-slate-50">
-                  <div className="flex items-center gap-3">
-                    <div className="w-14 h-14 bg-blue-700 rounded-xl flex items-center justify-center">
-                      <Heart className="w-7 h-7 text-white" />
-                    </div>
-                    <CardTitle className="text-2xl">Friday Online Prayer</CardTitle>
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="bg-blue-500/30 border-b border-white/20 px-6 py-5 flex items-center gap-3">
+                  <div className="w-12 h-12 bg-blue-500/40 rounded-xl flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-white" />
                   </div>
-                </CardHeader>
-                <CardContent className="pt-6">
-                  <p className="text-3xl font-bold text-blue-700 mb-2">8:00 PM</p>
-                  <p className="text-slate-600">Connect with us online for prayer and intercession</p>
-                </CardContent>
-              </Card>
+                  <h4 className="text-xl font-bold text-white">Friday Online Prayer</h4>
+                </div>
+                <div className="px-6 py-6">
+                  <p className="text-4xl font-bold text-blue-300 mb-2">8:00 PM</p>
+                  <p className="text-blue-100">Connect with us online for prayer and intercession</p>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Location */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Location</h3>
-            <Card className="border-2 border-blue-200 shadow-xl max-w-2xl mx-auto">
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-4 mb-6">
-                  <MapPin className="w-8 h-8 text-blue-700 flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold text-xl text-slate-900 mb-2">Northfleet Technology College</h4>
-                    <p className="text-slate-700">Colyer Road</p>
-                    <p className="text-slate-700">Northfleet</p>
-                    <p className="text-slate-700">Gravesend</p>
-                    <p className="text-slate-700 font-semibold">DA11 8BG</p>
-                  </div>
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">Location</h3>
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto shadow-2xl">
+              <div className="flex items-start gap-4 mb-6">
+                <MapPin className="w-8 h-8 text-blue-300 flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-bold text-xl text-white mb-2">Northfleet Technology College</h4>
+                  <p className="text-blue-100">Colyer Road</p>
+                  <p className="text-blue-100">Northfleet</p>
+                  <p className="text-blue-100">Gravesend</p>
+                  <p className="text-blue-200 font-semibold">DA11 8BG</p>
                 </div>
-                <a 
-                  href="https://maps.google.com/?q=Northfleet+Technology+College+Gravesend+DA11+8BG" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button className="w-full bg-blue-700 hover:bg-blue-800">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    Get Directions
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
+              </div>
+              <a href="https://maps.google.com/?q=Northfleet+Technology+College+Gravesend+DA11+8BG" target="_blank" rel="noopener noreferrer">
+                <Button className="w-full bg-blue-500 hover:bg-blue-400 text-white">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Get Directions
+                </Button>
+              </a>
+            </div>
           </div>
 
           {/* What to Expect */}
           <div>
-            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">What to Expect</h3>
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">What to Expect</h3>
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="border-2 border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Users className="w-6 h-6 text-blue-700" />
-                    </div>
-                    <CardTitle className="text-xl">A Warm Welcome</CardTitle>
+              {[
+                { icon: <Users className="w-6 h-6 text-blue-300" />, title: 'A Warm Welcome', text: "You'll be greeted by our welcoming team who will help you feel at home from the moment you arrive." },
+                { icon: <Waves className="w-6 h-6 text-blue-300" />, title: 'Prayer, Praise & Worship', text: "Experience passionate worship through music and prayer as we encounter God's presence together." },
+                { icon: <BookOpen className="w-6 h-6 text-blue-300" />, title: 'Practical Bible Teaching', text: "Receive relevant messages that address both your spiritual and practical needs in everyday life." },
+                { icon: <Heart className="w-6 h-6 text-blue-300" />, title: 'A Caring Community', text: "Church is more than a weekly gathering. It's a place where people build genuine relationships and find love, care, and support." },
+              ].map(({ icon, title, text }) => (
+                <div key={title} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-xl hover:bg-white/15 transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-blue-500/30 rounded-xl flex items-center justify-center">{icon}</div>
+                    <h4 className="font-bold text-lg text-white">{title}</h4>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600">
-                    You'll be greeted by our welcoming team who will help you feel at home from the moment you arrive.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Waves className="w-6 h-6 text-blue-700" />
-                    </div>
-                    <CardTitle className="text-xl">Prayer, Praise & Worship</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600">
-                    Experience passionate worship through music and prayer as we encounter God's presence together.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <BookOpen className="w-6 h-6 text-blue-700" />
-                    </div>
-                    <CardTitle className="text-xl">Practical Bible Teaching</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600">
-                    Receive relevant messages that address both your spiritual and practical needs in everyday life.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Heart className="w-6 h-6 text-blue-700" />
-                    </div>
-                    <CardTitle className="text-xl">A Caring Community</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600">
-                    Church is more than a weekly gathering. It's a place where people build genuine 
-                    relationships. At Royalhouse Chapel Kent you'll find a community that values love, care, 
-                    fellowship, and support.
-                  </p>
-                </CardContent>
-              </Card>
+                  <p className="text-blue-100 text-sm leading-relaxed">{text}</p>
+                </div>
+              ))}
             </div>
-            <div className="text-center mt-8">
-              <p className="text-lg text-slate-700 font-semibold">
-                Come As You Are
-              </p>
-              <p className="text-slate-600 mt-2">
-                You don't need to dress a certain way or have everything figured out to attend. Simply come 
-                as you are and experience the welcoming environment of our church family.
+            <div className="text-center mt-10">
+              <p className="text-xl text-white font-semibold mb-2">Come As You Are</p>
+              <p className="text-blue-200">
+                You don't need to dress a certain way or have everything figured out. Simply come as you are.
               </p>
             </div>
           </div>
@@ -519,10 +468,16 @@ const Home = () => {
       </section>
 
       {/* Support Us Section */}
-      <section id="support" className="py-20 px-4 bg-gradient-to-br from-blue-700 to-blue-800 text-white">
-        <div className="container mx-auto max-w-6xl">
+      <section id="support" className="py-20 px-4 relative overflow-hidden text-white">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-blue-900/85"></div>
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
+            <p className="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">Give · Serve · Pray</p>
             <h2 className="text-4xl md:text-6xl font-bold mb-6">Support Us</h2>
+            <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full mb-6"></div>
             <p className="text-xl opacity-95 max-w-4xl mx-auto leading-relaxed">
               Royalhouse Chapel Kent exists to serve God, support our community, and impact lives. 
               Everything we do—from our weekly services to outreach programs—is made possible through 
