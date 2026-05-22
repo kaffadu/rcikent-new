@@ -59,6 +59,8 @@ class ConnectFormCreate(BaseModel):
 def send_email(subject: str, body: str):
     smtp_user = os.environ.get('SMTP_USER')
     smtp_password = os.environ.get('SMTP_PASSWORD')
+    smtp_host = os.environ.get('SMTP_HOST', 'mail.privateemail.com')
+    smtp_port = int(os.environ.get('SMTP_PORT', '465'))
     notify_email = os.environ.get('NOTIFY_EMAIL', smtp_user)
 
     if not smtp_user or not smtp_password:
@@ -72,7 +74,7 @@ def send_email(subject: str, body: str):
         msg['Subject'] = subject
         msg.attach(MIMEText(body, 'plain'))
 
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+        with smtplib.SMTP_SSL(smtp_host, smtp_port) as server:
             server.login(smtp_user, smtp_password)
             server.sendmail(smtp_user, notify_email, msg.as_string())
 
