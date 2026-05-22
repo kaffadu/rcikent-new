@@ -2,7 +2,7 @@
   "name": "royalhouse-chapel-kent",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kaffadu.github.io/rcikent-final",
+  "homepage": "https://kaffadu.github.io/rcikent-new",
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.8",
