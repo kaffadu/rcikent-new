@@ -68,11 +68,11 @@ const Home = () => {
             </a>
             <nav className="hidden lg:flex items-center gap-6">
               <a href="#/" className="text-slate-900 font-semibold hover:text-blue-700 transition-colors">Home</a>
-              <a href="#who-we-are" className="text-slate-700 hover:text-blue-700 transition-colors">Who We Are</a>
-              <a href="#new-here" className="text-slate-700 hover:text-blue-700 transition-colors">New Here?</a>
-              <a href="#plan-your-visit" className="text-slate-700 hover:text-blue-700 transition-colors">Plan Your Visit</a>
-              <a href="#support" className="text-slate-700 hover:text-blue-700 transition-colors">Support Us</a>
-              <Button 
+              <button onClick={() => document.getElementById('who-we-are').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">Who We Are</button>
+              <button onClick={() => document.getElementById('new-here').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">New Here?</button>
+              <button onClick={() => document.getElementById('plan-your-visit').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">Plan Your Visit</button>
+              <button onClick={() => document.getElementById('support').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">Support Us</button>
+              <Button
                 size="sm"
                 className="bg-blue-700 hover:bg-blue-800 text-white"
                 onClick={() => document.getElementById('connect').scrollIntoView({ behavior: 'smooth' })}
@@ -94,12 +94,12 @@ const Home = () => {
           <div className="lg:hidden bg-white border-t border-slate-100 shadow-lg">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
               <a href="#/" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Home</a>
-              <a href="#who-we-are" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Who We Are</a>
-              <a href="#new-here" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>New Here?</a>
-              <a href="#plan-your-visit" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Plan Your Visit</a>
-              <a href="#support" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Support Us</a>
-              <a href="#prayer" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Prayer</a>
-              <a href="#connect" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Connect</a>
+              <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('who-we-are').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>Who We Are</button>
+              <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('new-here').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>New Here?</button>
+              <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('plan-your-visit').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>Plan Your Visit</button>
+              <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('support').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>Support Us</button>
+              <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('prayer').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>Prayer</button>
+              <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('connect').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>Connect</button>
             </nav>
           </div>
         )}
@@ -308,7 +308,7 @@ const Home = () => {
           </div>
 
           {/* When We Meet */}
-          <div className="mb-16">
+          <div id="when-we-meet" className="mb-16">
             <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">When We Meet</h3>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <Card className="border-2 border-blue-200 shadow-xl">
@@ -652,7 +652,7 @@ const Home = () => {
                         type="email"
                         placeholder="your.email@example.com"
                         value={connectForm.email}
-                        onChange={(e) => setConnectForm({ ...connectForm, name: e.target.value })}
+                        onChange={(e) => setConnectForm({ ...connectForm, email: e.target.value })}
                         required
                         className="border-blue-200 focus:border-blue-500"
                       />
