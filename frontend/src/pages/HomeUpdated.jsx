@@ -216,8 +216,8 @@ const Home = () => {
       {/* Who We Are Section */}
       <section id="who-we-are" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-blue-950/88"></div>
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-blue-950/92"></div>
         </div>
         {/* Dot pattern overlay */}
         <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '32px 32px'}}></div>
@@ -309,7 +309,7 @@ const Home = () => {
       <section id="new-here" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-slate-900/80"></div>
+          <div className="absolute inset-0 bg-slate-900/90"></div>
         </div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
@@ -363,7 +363,7 @@ const Home = () => {
       <section id="plan-your-visit" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-slate-900/82"></div>
+          <div className="absolute inset-0 bg-slate-900/90"></div>
         </div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
@@ -471,7 +471,7 @@ const Home = () => {
       <section id="support" className="py-20 px-4 relative overflow-hidden text-white">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-blue-900/85"></div>
+          <div className="absolute inset-0 bg-blue-900/92"></div>
         </div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-12">
@@ -574,7 +574,7 @@ const Home = () => {
       <section id="prayer" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-indigo-950/88"></div>
+          <div className="absolute inset-0 bg-indigo-950/92"></div>
         </div>
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-12">
@@ -641,7 +641,7 @@ const Home = () => {
       <section id="connect" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-slate-900/85"></div>
+          <div className="absolute inset-0 bg-slate-900/92"></div>
         </div>
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-12">
