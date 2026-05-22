@@ -23,12 +23,11 @@ import {
   DollarSign,
   Waves
 } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
+import { toast } from 'sonner';
 
 const API_URL = process.env.REACT_APP_API_URL || '';
 
 const Home = () => {
-  const { toast } = useToast();
   const [prayerForm, setPrayerForm] = useState({ name: '', email: '', request: '' });
   const [connectForm, setConnectForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,16 +43,13 @@ const Home = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(prayerForm),
       });
-      toast({
-        title: "Prayer Request Submitted",
+      toast.success("Prayer Request Submitted", {
         description: "We will be praying for you. God bless you!",
       });
       setPrayerForm({ name: '', email: '', request: '' });
     } catch {
-      toast({
-        title: "Something went wrong",
+      toast.error("Something went wrong", {
         description: "Please try again or contact us directly.",
-        variant: "destructive",
       });
     } finally {
       setSubmittingPrayer(false);
@@ -69,16 +65,13 @@ const Home = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(connectForm),
       });
-      toast({
-        title: "Thank You for Connecting!",
+      toast.success("Thank You for Connecting!", {
         description: "We'll be in touch with you soon.",
       });
       setConnectForm({ name: '', email: '', phone: '', message: '' });
     } catch {
-      toast({
-        title: "Something went wrong",
+      toast.error("Something went wrong", {
         description: "Please try again or contact us directly.",
-        variant: "destructive",
       });
     } finally {
       setSubmittingConnect(false);
