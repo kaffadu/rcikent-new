@@ -581,7 +581,7 @@ const Home = () => {
             <p className="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">We're Here For You</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Prayer Requests</h2>
             <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full mb-4"></div>
-            <p className="text-lg text-blue-100 leading-relaxed">
+            <p className="text-lg text-white leading-relaxed max-w-2xl mx-auto">
               We believe in the power of prayer. Share your request and let us stand with you in faith.
             </p>
           </div>
@@ -648,7 +648,7 @@ const Home = () => {
             <p className="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">Get In Touch</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Connect With Us</h2>
             <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full mb-4"></div>
-            <p className="text-lg text-blue-100 leading-relaxed">
+            <p className="text-lg text-white leading-relaxed max-w-2xl mx-auto">
               We would love to hear from you! Whether you have questions, want to get involved, or need
               prayer, there are several ways to connect with Royalhouse Chapel Kent.
             </p>
