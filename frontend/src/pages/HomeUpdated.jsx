@@ -571,216 +571,199 @@ const Home = () => {
       </section>
 
       {/* Prayer Request Section */}
-      <section id="prayer" className="py-20 px-4 bg-slate-50">
-        <div className="container mx-auto max-w-4xl">
+      <section id="prayer" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-indigo-950/88"></div>
+        </div>
+        <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Prayer Requests</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">We're Here For You</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Prayer Requests</h2>
+            <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full mb-4"></div>
+            <p className="text-lg text-blue-100 leading-relaxed">
               We believe in the power of prayer. Share your request and let us stand with you in faith.
             </p>
           </div>
 
-          <Card className="border-2 border-blue-200 shadow-xl">
-            <CardContent className="pt-6">
-              <form onSubmit={handlePrayerSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="prayer-name">Your Name</Label>
-                    <Input
-                      id="prayer-name"
-                      placeholder="Enter your name"
-                      value={prayerForm.name}
-                      onChange={(e) => setPrayerForm({ ...prayerForm, name: e.target.value })}
-                      required
-                      className="border-blue-200 focus:border-blue-500"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="prayer-email">Email Address</Label>
-                    <Input
-                      id="prayer-email"
-                      type="email"
-                      placeholder="your.email@example.com"
-                      value={prayerForm.email}
-                      onChange={(e) => setPrayerForm({ ...prayerForm, email: e.target.value })}
-                      required
-                      className="border-blue-200 focus:border-blue-500"
-                    />
-                  </div>
-                </div>
+          <div className="bg-white rounded-2xl shadow-2xl p-8">
+            <form onSubmit={handlePrayerSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="prayer-request">Prayer Request</Label>
-                  <Textarea
-                    id="prayer-request"
-                    placeholder="How can we pray for you?"
-                    rows={6}
-                    value={prayerForm.request}
-                    onChange={(e) => setPrayerForm({ ...prayerForm, request: e.target.value })}
+                  <Label htmlFor="prayer-name" className="text-slate-700 font-semibold">Your Name</Label>
+                  <Input
+                    id="prayer-name"
+                    placeholder="Enter your name"
+                    value={prayerForm.name}
+                    onChange={(e) => setPrayerForm({ ...prayerForm, name: e.target.value })}
                     required
-                    className="border-blue-200 focus:border-blue-500 resize-none"
+                    className="border-slate-300 focus:border-blue-500 bg-slate-50"
                   />
                 </div>
-                <Button
-                  type="submit"
-                  disabled={submittingPrayer}
-                  className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold"
-                >
-                  {submittingPrayer ? 'Submitting...' : 'Submit Prayer Request'}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+                <div className="space-y-2">
+                  <Label htmlFor="prayer-email" className="text-slate-700 font-semibold">Email Address</Label>
+                  <Input
+                    id="prayer-email"
+                    type="email"
+                    placeholder="your.email@example.com"
+                    value={prayerForm.email}
+                    onChange={(e) => setPrayerForm({ ...prayerForm, email: e.target.value })}
+                    required
+                    className="border-slate-300 focus:border-blue-500 bg-slate-50"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="prayer-request" className="text-slate-700 font-semibold">Prayer Request</Label>
+                <Textarea
+                  id="prayer-request"
+                  placeholder="How can we pray for you?"
+                  rows={6}
+                  value={prayerForm.request}
+                  onChange={(e) => setPrayerForm({ ...prayerForm, request: e.target.value })}
+                  required
+                  className="border-slate-300 focus:border-blue-500 resize-none bg-slate-50"
+                />
+              </div>
+              <Button
+                type="submit"
+                disabled={submittingPrayer}
+                className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold"
+              >
+                {submittingPrayer ? 'Submitting...' : 'Submit Prayer Request'}
+              </Button>
+            </form>
+          </div>
         </div>
       </section>
 
       {/* Connect With Us Section */}
-      <section id="connect" className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-4xl">
+      <section id="connect" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-slate-900/85"></div>
+        </div>
+        <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Connect With Us</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              We would love to hear from you! Whether you have questions, want to get involved, or need 
+            <p className="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">Get In Touch</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Connect With Us</h2>
+            <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full mb-4"></div>
+            <p className="text-lg text-blue-100 leading-relaxed">
+              We would love to hear from you! Whether you have questions, want to get involved, or need
               prayer, there are several ways to connect with Royalhouse Chapel Kent.
             </p>
           </div>
 
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Contact Form</h3>
-            <p className="text-center text-slate-600 mb-8">
-              Please use the form below to send us a message. We'll get back to you as soon as possible.
-            </p>
-            <Card className="border-2 border-blue-200 shadow-xl">
-              <CardContent className="pt-6">
-                <form onSubmit={handleConnectSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="connect-name">Full Name</Label>
-                      <Input
-                        id="connect-name"
-                        placeholder="Enter your full name"
-                        value={connectForm.name}
-                        onChange={(e) => setConnectForm({ ...connectForm, name: e.target.value })}
-                        required
-                        className="border-blue-200 focus:border-blue-500"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="connect-email">Email Address</Label>
-                      <Input
-                        id="connect-email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                        value={connectForm.email}
-                        onChange={(e) => setConnectForm({ ...connectForm, email: e.target.value })}
-                        required
-                        className="border-blue-200 focus:border-blue-500"
-                      />
-                    </div>
-                  </div>
+          {/* Contact Form */}
+          <div className="mb-10">
+            <div className="bg-white rounded-2xl shadow-2xl p-8">
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">Send Us a Message</h3>
+              <p className="text-slate-500 mb-6">We'll get back to you as soon as possible.</p>
+              <form onSubmit={handleConnectSubmit} className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-5">
                   <div className="space-y-2">
-                    <Label htmlFor="connect-phone">Phone Number (Optional)</Label>
+                    <Label htmlFor="connect-name" className="text-slate-700 font-semibold">Full Name</Label>
                     <Input
-                      id="connect-phone"
-                      type="tel"
-                      placeholder="Your phone number"
-                      value={connectForm.phone}
-                      onChange={(e) => setConnectForm({ ...connectForm, phone: e.target.value })}
-                      className="border-blue-200 focus:border-blue-500"
+                      id="connect-name"
+                      placeholder="Enter your full name"
+                      value={connectForm.name}
+                      onChange={(e) => setConnectForm({ ...connectForm, name: e.target.value })}
+                      required
+                      className="border-slate-300 focus:border-blue-500 bg-slate-50"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="connect-message">Message</Label>
-                    <Textarea
-                      id="connect-message"
-                      placeholder="Tell us how we can help you..."
-                      rows={4}
-                      value={connectForm.message}
-                      onChange={(e) => setConnectForm({ ...connectForm, message: e.target.value })}
+                    <Label htmlFor="connect-email" className="text-slate-700 font-semibold">Email Address</Label>
+                    <Input
+                      id="connect-email"
+                      type="email"
+                      placeholder="your.email@example.com"
+                      value={connectForm.email}
+                      onChange={(e) => setConnectForm({ ...connectForm, email: e.target.value })}
                       required
-                      className="border-blue-200 focus:border-blue-500 resize-none"
+                      className="border-slate-300 focus:border-blue-500 bg-slate-50"
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    disabled={submittingConnect}
-                    className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold"
-                  >
-                    <Send className="w-5 h-5 mr-2" />
-                    {submittingConnect ? 'Sending...' : 'Send Message'}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="connect-phone" className="text-slate-700 font-semibold">Phone Number <span className="text-slate-400 font-normal">(Optional)</span></Label>
+                  <Input
+                    id="connect-phone"
+                    type="tel"
+                    placeholder="Your phone number"
+                    value={connectForm.phone}
+                    onChange={(e) => setConnectForm({ ...connectForm, phone: e.target.value })}
+                    className="border-slate-300 focus:border-blue-500 bg-slate-50"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="connect-message" className="text-slate-700 font-semibold">Message</Label>
+                  <Textarea
+                    id="connect-message"
+                    placeholder="Tell us how we can help you..."
+                    rows={4}
+                    value={connectForm.message}
+                    onChange={(e) => setConnectForm({ ...connectForm, message: e.target.value })}
+                    required
+                    className="border-slate-300 focus:border-blue-500 resize-none bg-slate-50"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  disabled={submittingConnect}
+                  className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold"
+                >
+                  <Send className="w-5 h-5 mr-2" />
+                  {submittingConnect ? 'Sending...' : 'Send Message'}
+                </Button>
+              </form>
+            </div>
           </div>
 
           {/* Social Media & Visit Info */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <Card className="border-2 border-slate-200">
-              <CardHeader>
-                <CardTitle className="text-xl">Social Media</CardTitle>
-                <CardDescription>Stay connected and follow us online for updates, messages, and events</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex gap-4">
-                  <a 
-                    href="https://www.facebook.com/rcikent" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                  >
-                    <Facebook className="w-6 h-6 text-white" />
-                  </a>
-                  <a 
-                    href="https://instagram.com/rcikent" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                  >
-                    <Instagram className="w-6 h-6 text-white" />
-                  </a>
-                  <a 
-                    href="https://www.tiktok.com/@rcikent" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-black hover:bg-slate-800 rounded-full flex items-center justify-center transition-all hover:scale-110 text-white font-bold"
-                  >
-                    TT
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-xl">
+              <h3 className="text-xl font-bold text-white mb-1">Follow Us</h3>
+              <p className="text-blue-200 text-sm mb-5">Stay connected and follow us online</p>
+              <div className="flex gap-4">
+                <a href="https://www.facebook.com/rcikent" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg">
+                  <Facebook className="w-6 h-6 text-white" />
+                </a>
+                <a href="https://instagram.com/rcikent" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg">
+                  <Instagram className="w-6 h-6 text-white" />
+                </a>
+                <a href="https://www.tiktok.com/@rcikent" target="_blank" rel="noopener noreferrer"
+                  className="w-12 h-12 bg-black hover:bg-slate-700 rounded-full flex items-center justify-center transition-all hover:scale-110 text-white font-bold shadow-lg">
+                  TT
+                </a>
+              </div>
+            </div>
 
-            <Card className="border-2 border-slate-200">
-              <CardHeader>
-                <CardTitle className="text-xl">Visit Us</CardTitle>
-                <CardDescription>We meet for services and prayer</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 text-slate-700">
-                  <div>
-                    <p className="font-semibold">Sunday Service</p>
-                    <p className="text-sm">10:00 AM</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Friday Online Prayer</p>
-                    <p className="text-sm">8:00 PM</p>
-                  </div>
-                  <div className="pt-3 border-t">
-                    <p className="text-sm">Come and experience God's presence in a warm, welcoming environment.</p>
-                  </div>
-                  <a 
-                    href="https://maps.google.com/?q=Northfleet+Technology+College+Gravesend+DA11+8BG" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="outline" className="w-full mt-3">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Get Directions
-                    </Button>
-                  </a>
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-xl">
+              <h3 className="text-xl font-bold text-white mb-1">Visit Us</h3>
+              <p className="text-blue-200 text-sm mb-4">We meet for services and prayer</p>
+              <div className="space-y-3">
+                <div>
+                  <p className="font-semibold text-white">Sunday Service</p>
+                  <p className="text-blue-200 text-sm">10:00 AM</p>
                 </div>
-              </CardContent>
-            </Card>
+                <div>
+                  <p className="font-semibold text-white">Friday Online Prayer</p>
+                  <p className="text-blue-200 text-sm">8:00 PM</p>
+                </div>
+                <div className="pt-3 border-t border-white/20">
+                  <p className="text-blue-200 text-sm">Come and experience God's presence in a warm, welcoming environment.</p>
+                </div>
+                <a href="https://maps.google.com/?q=Northfleet+Technology+College+Gravesend+DA11+8BG" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full mt-2 border-white/40 text-white hover:bg-white/10">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Get Directions
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
