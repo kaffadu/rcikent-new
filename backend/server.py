@@ -89,6 +89,36 @@ def send_email(subject: str, body: str):
 async def root():
     return {"message": "Hello World"}
 
+@api_router.get("/test-email")
+async def test_email():
+    smtp_user = os.environ.get('SMTP_USER')
+    smtp_password = os.environ.get('SMTP_PASSWORD')
+    smtp_host = os.environ.get('SMTP_HOST', 'mail.privateemail.com')
+    smtp_port = int(os.environ.get('SMTP_PORT', '465'))
+    notify_email = os.environ.get('NOTIFY_EMAIL', smtp_user)
+
+    if not smtp_user or not smtp_password:
+        return {"status": "error", "message": "SMTP_USER or SMTP_PASSWORD not set in environment"}
+
+    try:
+        msg = MIMEMultipart()
+        msg['From'] = smtp_user
+        msg['To'] = notify_email
+        msg['Subject'] = "RCI Kent - Email Test"
+        msg.attach(MIMEText("This is a test email from your RCI Kent website backend.", 'plain'))
+
+        with smtplib.SMTP_SSL(smtp_host, smtp_port) as server:
+            server.login(smtp_user, smtp_password)
+            server.sendmail(smtp_user, notify_email, msg.as_string())
+
+        return {"status": "success", "message": f"Test email sent to {notify_email}"}
+    except smtplib.SMTPAuthenticationError as e:
+        return {"status": "error", "type": "auth", "message": f"Authentication failed: {str(e)}"}
+    except smtplib.SMTPConnectError as e:
+        return {"status": "error", "type": "connect", "message": f"Could not connect to {smtp_host}:{smtp_port}: {str(e)}"}
+    except Exception as e:
+        return {"status": "error", "type": type(e).__name__, "message": str(e)}
+
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.model_dump()
