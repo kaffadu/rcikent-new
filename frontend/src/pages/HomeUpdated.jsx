@@ -84,7 +84,7 @@ const Home = () => {
       <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50 border-b border-slate-200">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <a href="#/" className="flex items-center gap-3">
+            <a href="#/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-3">
               <img 
                 src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/8k2u4zsp_IMG_0615.jpeg" 
                 alt="Royalhouse Chapel Kent Mission" 
@@ -96,7 +96,7 @@ const Home = () => {
               </div>
             </a>
             <nav className="hidden lg:flex items-center gap-6">
-              <a href="#/" className="text-slate-900 font-semibold hover:text-blue-700 transition-colors">Home</a>
+              <a href="#/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-slate-900 font-semibold hover:text-blue-700 transition-colors">Home</a>
               <button onClick={() => document.getElementById('who-we-are').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">Who We Are</button>
               <button onClick={() => document.getElementById('new-here').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">New Here?</button>
               <button onClick={() => document.getElementById('plan-your-visit').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">Plan Your Visit</button>
@@ -133,7 +133,7 @@ const Home = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-slate-100 shadow-lg">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
-              <a href="#/" className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Home</a>
+              <a href="#/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileMenuOpen(false); }} className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2">Home</a>
               <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('who-we-are').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>Who We Are</button>
               <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('new-here').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>New Here?</button>
               <button className="text-slate-700 hover:text-blue-700 transition-colors font-medium py-2 text-left" onClick={() => { document.getElementById('plan-your-visit').scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>Plan Your Visit</button>
