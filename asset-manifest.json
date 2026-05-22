@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rcikent-new/static/css/main.51f46da0.css",
+    "main.js": "/rcikent-new/static/js/main.6ba8b18b.js",
+    "index.html": "/rcikent-new/index.html",
+    "main.51f46da0.css.map": "/rcikent-new/static/css/main.51f46da0.css.map",
+    "main.6ba8b18b.js.map": "/rcikent-new/static/js/main.6ba8b18b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51f46da0.css",
+    "static/js/main.6ba8b18b.js"
+  ]
+}
