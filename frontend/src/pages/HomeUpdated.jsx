@@ -101,6 +101,17 @@ const Home = () => {
               <button onClick={() => document.getElementById('new-here').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">New Here?</button>
               <button onClick={() => document.getElementById('plan-your-visit').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">Plan Your Visit</button>
               <button onClick={() => document.getElementById('support').scrollIntoView({ behavior: 'smooth' })} className="text-slate-700 hover:text-blue-700 transition-colors">Support Us</button>
+              <div className="flex items-center gap-2 border-l border-slate-200 pl-4 ml-2">
+                <a href="https://www.facebook.com/rcikent" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all hover:scale-110">
+                  <Facebook className="w-4 h-4 text-white" />
+                </a>
+                <a href="https://instagram.com/rcikent" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition-all hover:scale-110">
+                  <Instagram className="w-4 h-4 text-white" />
+                </a>
+                <a href="https://www.tiktok.com/@rcikent" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-black hover:bg-slate-800 rounded-full flex items-center justify-center transition-all hover:scale-110 text-white text-xs font-bold">
+                  TT
+                </a>
+              </div>
               <Button
                 size="sm"
                 className="bg-blue-700 hover:bg-blue-800 text-white"
@@ -161,9 +172,24 @@ const Home = () => {
             Royalhouse Chapel<br />
             <span className="text-blue-200">Kent Mission</span>
           </h1>
-          <p className="text-2xl md:text-4xl mb-12 opacity-95 font-light max-w-4xl mx-auto">
+          <p className="text-2xl md:text-4xl mb-8 opacity-95 font-light max-w-4xl mx-auto">
             Touching Our Generation with the Power of God
           </p>
+
+          {/* Service Times Bar */}
+          <div className="flex flex-col sm:flex-row justify-center gap-3 mb-10">
+            <div className="flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-5 py-2 text-white">
+              <Church className="w-4 h-4 text-blue-200" />
+              <span className="text-sm font-semibold">Sunday Service</span>
+              <span className="text-blue-200 font-bold">10:00 AM</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-5 py-2 text-white">
+              <Heart className="w-4 h-4 text-blue-200" />
+              <span className="text-sm font-semibold">Friday Online Prayer</span>
+              <span className="text-blue-200 font-bold">8:00 PM</span>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
               size="lg"
@@ -793,6 +819,39 @@ const Home = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="py-16 px-4 bg-blue-700">
+        <div className="container mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold text-white mb-3">Stay Connected</h2>
+          <p className="text-blue-100 mb-8">Get updates on services, events, and church news delivered to your inbox.</p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const email = e.target.email.value;
+              if (email) {
+                toast.success("You're subscribed!", { description: "Thanks for joining — we'll keep you updated." });
+                e.target.reset();
+              }
+            }}
+            className="flex flex-col sm:flex-row gap-3 justify-center"
+          >
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Enter your email address"
+              className="flex-1 max-w-sm px-4 py-3 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button
+              type="submit"
+              className="bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </section>
 
