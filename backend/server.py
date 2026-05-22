@@ -1,12 +1,15 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, BackgroundTasks
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
@@ -14,22 +17,24 @@ from datetime import datetime, timezone
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-# Create the main app without a prefix
 app = FastAPI()
-
-# Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
-# Define Models
+
+# --- Models ---
+
 class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
-    
+    model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     client_name: str
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
@@ -37,7 +42,47 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
-# Add your routes to the router instead of directly to app
+class PrayerRequestCreate(BaseModel):
+    name: str
+    email: str
+    request: str
+
+class ConnectFormCreate(BaseModel):
+    name: str
+    email: str
+    phone: Optional[str] = ""
+    message: str
+
+
+# --- Email helper ---
+
+def send_email(subject: str, body: str):
+    smtp_user = os.environ.get('SMTP_USER')
+    smtp_password = os.environ.get('SMTP_PASSWORD')
+    notify_email = os.environ.get('NOTIFY_EMAIL', smtp_user)
+
+    if not smtp_user or not smtp_password:
+        logger.warning("Email not configured (SMTP_USER/SMTP_PASSWORD missing), skipping notification")
+        return
+
+    try:
+        msg = MIMEMultipart()
+        msg['From'] = smtp_user
+        msg['To'] = notify_email
+        msg['Subject'] = subject
+        msg.attach(MIMEText(body, 'plain'))
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+            server.login(smtp_user, smtp_password)
+            server.sendmail(smtp_user, notify_email, msg.as_string())
+
+        logger.info(f"Email sent: {subject}")
+    except Exception as e:
+        logger.error(f"Failed to send email: {e}")
+
+
+# --- Routes ---
+
 @api_router.get("/")
 async def root():
     return {"message": "Hello World"}
@@ -46,27 +91,70 @@ async def root():
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.model_dump()
     status_obj = StatusCheck(**status_dict)
-    
-    # Convert to dict and serialize datetime to ISO string for MongoDB
     doc = status_obj.model_dump()
     doc['timestamp'] = doc['timestamp'].isoformat()
-    
-    _ = await db.status_checks.insert_one(doc)
+    await db.status_checks.insert_one(doc)
     return status_obj
 
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
     status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    
-    # Convert ISO string timestamps back to datetime objects
     for check in status_checks:
         if isinstance(check['timestamp'], str):
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
     return status_checks
 
-# Include the router in the main app
+@api_router.post("/prayer-request", status_code=201)
+async def submit_prayer_request(input: PrayerRequestCreate, background_tasks: BackgroundTasks):
+    doc = {
+        "id": str(uuid.uuid4()),
+        "name": input.name,
+        "email": input.email,
+        "request": input.request,
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    }
+    await db.prayer_requests.insert_one(doc)
+
+    background_tasks.add_task(
+        send_email,
+        subject=f"New Prayer Request from {input.name}",
+        body=(
+            f"Name: {input.name}\n"
+            f"Email: {input.email}\n\n"
+            f"Prayer Request:\n{input.request}"
+        )
+    )
+
+    return {"message": "Prayer request submitted successfully"}
+
+@api_router.post("/connect", status_code=201)
+async def submit_connect_form(input: ConnectFormCreate, background_tasks: BackgroundTasks):
+    doc = {
+        "id": str(uuid.uuid4()),
+        "name": input.name,
+        "email": input.email,
+        "phone": input.phone,
+        "message": input.message,
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    }
+    await db.connect_forms.insert_one(doc)
+
+    background_tasks.add_task(
+        send_email,
+        subject=f"New Connection Request from {input.name}",
+        body=(
+            f"Name: {input.name}\n"
+            f"Email: {input.email}\n"
+            f"Phone: {input.phone or 'Not provided'}\n\n"
+            f"Message:\n{input.message}"
+        )
+    )
+
+    return {"message": "Message sent successfully"}
+
+
+# --- App setup ---
+
 app.include_router(api_router)
 
 app.add_middleware(
@@ -76,13 +164,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

@@ -25,28 +25,64 @@ import {
 } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
+const API_URL = process.env.REACT_APP_API_URL || '';
+
 const Home = () => {
   const { toast } = useToast();
   const [prayerForm, setPrayerForm] = useState({ name: '', email: '', request: '' });
   const [connectForm, setConnectForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [submittingPrayer, setSubmittingPrayer] = useState(false);
+  const [submittingConnect, setSubmittingConnect] = useState(false);
 
-  const handlePrayerSubmit = (e) => {
+  const handlePrayerSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: "Prayer Request Submitted",
-      description: "We will be praying for you. God bless you!",
-    });
-    setPrayerForm({ name: '', email: '', request: '' });
+    setSubmittingPrayer(true);
+    try {
+      await fetch(`${API_URL}/api/prayer-request`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(prayerForm),
+      });
+      toast({
+        title: "Prayer Request Submitted",
+        description: "We will be praying for you. God bless you!",
+      });
+      setPrayerForm({ name: '', email: '', request: '' });
+    } catch {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmittingPrayer(false);
+    }
   };
 
-  const handleConnectSubmit = (e) => {
+  const handleConnectSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: "Thank You for Connecting!",
-      description: "We'll be in touch with you soon.",
-    });
-    setConnectForm({ name: '', email: '', phone: '', message: '' });
+    setSubmittingConnect(true);
+    try {
+      await fetch(`${API_URL}/api/connect`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(connectForm),
+      });
+      toast({
+        title: "Thank You for Connecting!",
+        description: "We'll be in touch with you soon.",
+      });
+      setConnectForm({ name: '', email: '', phone: '', message: '' });
+    } catch {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmittingConnect(false);
+    }
   };
 
   return (
@@ -602,11 +638,12 @@ const Home = () => {
                     className="border-blue-200 focus:border-blue-500 resize-none"
                   />
                 </div>
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
+                  disabled={submittingPrayer}
                   className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold"
                 >
-                  Submit Prayer Request
+                  {submittingPrayer ? 'Submitting...' : 'Submit Prayer Request'}
                 </Button>
               </form>
             </CardContent>
@@ -681,12 +718,13 @@ const Home = () => {
                       className="border-blue-200 focus:border-blue-500 resize-none"
                     />
                   </div>
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
+                    disabled={submittingConnect}
                     className="w-full bg-blue-700 hover:bg-blue-800 text-white py-6 text-lg font-semibold"
                   >
                     <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                    {submittingConnect ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
