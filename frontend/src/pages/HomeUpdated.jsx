@@ -216,7 +216,7 @@ const Home = () => {
       {/* Who We Are Section */}
       <section id="who-we-are" className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://customer-assets.emergentagent.com/job_rhkent-worship/artifacts/0cedpo9t_IMG_0618.jpg" alt="" className="w-full h-full object-cover object-center" />
+          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1920&q=80" alt="" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-blue-950/88"></div>
         </div>
         {/* Dot pattern overlay */}
