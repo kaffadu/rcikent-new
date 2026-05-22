@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/rcikent-new/static/css/main.7db0def7.css",
-    "main.js": "/rcikent-new/static/js/main.7a0f4574.js",
+    "main.js": "/rcikent-new/static/js/main.f7d64bcf.js",
     "index.html": "/rcikent-new/index.html",
     "main.7db0def7.css.map": "/rcikent-new/static/css/main.7db0def7.css.map",
-    "main.7a0f4574.js.map": "/rcikent-new/static/js/main.7a0f4574.js.map"
+    "main.f7d64bcf.js.map": "/rcikent-new/static/js/main.f7d64bcf.js.map"
   },
   "entrypoints": [
     "static/css/main.7db0def7.css",
-    "static/js/main.7a0f4574.js"
+    "static/js/main.f7d64bcf.js"
   ]
 }
